@@ -946,21 +946,70 @@ button.submit-btn:active {
 }
 
 /*-------------------------------------------
-  Responsive - Hamburger Menu
+  Responsive-Hamburger-Menu
 -------------------------------------------*/
-@media (max-width: 768px) {
+
+@media screen and (max-width: 768px) {
   .site-header {
     flex-direction: row;
   }
 
   .site-title {
     justify-content: flex-start;
-    margin: 0 0 0 8px;
+    margin-left: 8px;
+    margin-right: 0;
     align-items: center;
   }
 
   .header-menu-toggle {
     display: block;
+    position: absolute;
+    top: 0;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  .header-menu-toggle span {
+    position: absolute;
+    left: 50%;
+    width: 24px;
+    height: 3px;
+    background: #fff;
+    transition: 0.3s;
+    transform: translateX(-50%);
+  }
+
+  .header-menu-toggle span:nth-child(1) {
+    top: 8px;
+  }
+
+  .header-menu-toggle span:nth-child(2) {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .header-menu-toggle span:nth-child(3) {
+    bottom: 8px;
+  }
+
+  .header-menu-toggle.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .header-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .header-menu-toggle.active span:nth-child(3) {
+    top: 50%;
+    bottom: auto;
+    transform: translate(-50%, -50%) rotate(-45deg);
   }
 
   .header-menu {
@@ -968,11 +1017,12 @@ button.submit-btn:active {
     position: fixed;
     top: 0;
     right: 0;
+    background: rgba(0, 0, 0, 0.8);
     width: 200px;
     padding: 0 8px 8px;
-    background: rgba(0, 0, 0, 0.8);
     z-index: 999;
     flex-direction: column;
+    writing-mode: horizontal-tb;
     gap: 16px;
   }
 
@@ -981,115 +1031,70 @@ button.submit-btn:active {
   }
 }
 
-.header-menu-toggle {
-  display: none;
-  position: absolute;
-  top: 0;
-  right: 16px;
-  width: 32px;
-  height: 32px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.header-menu-toggle span {
-  position: absolute;
-  left: 50%;
-  width: 24px;
-  height: 3px;
-  background: #fff;
-  transition: 0.3s;
-  transform: translateX(-50%);
-}
-
-.header-menu-toggle span:nth-child(1) {
-  top: 8px;
-}
-
-.header-menu-toggle span:nth-child(2) {
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.header-menu-toggle span:nth-child(3) {
-  bottom: 8px;
-}
-
-.header-menu-toggle.active span:nth-child(1) {
-  top: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.header-menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.header-menu-toggle.active span:nth-child(3) {
-  top: 50%;
-  bottom: auto;
-  transform: translate(-50%, -50%) rotate(-45deg);
-}
-
 /*-------------------------------------------
-  Responsive - News
+  Responsive-News
 -------------------------------------------*/
-@media (max-width: 768px) {
+
+@media screen and (max-width: 768px) {
   .news-container {
+    justify-content: center;
+    gap: 16px;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
   }
 
   .news-article {
     width: 320px;
+    max-width: 90vw;
   }
 }
 
-/*-------------------------------------------
-  Responsive - News Modal
--------------------------------------------*/
-@media (max-width: 768px) {
-  .news-modal-content {
-    max-width: 90%;
-    max-height: 90%;
-    padding: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .news-modal-content {
-    max-width: 95%;
-  }
-}
-
-/*-------------------------------------------
-  Responsive - Message
--------------------------------------------*/
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .message-container {
-    flex-direction: column;
-    align-items: center;
-    padding: 0 10px;
+    display: flex;
+    flex-direction: column; /* 縦並び */
+    align-items: center;    /* 横中央揃え */
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
   }
 
-  .message-img,
-  .message-text {
-    flex: 0 0 100%;
-    max-width: 100%;
-    position: relative;
-    left: 0;
-    right: 0;
-    z-index: 1;
+  .message-img {
+    width: 100%;
+    max-width: 320px;
     margin-bottom: 20px;
   }
+
+  .message-img img {
+    width: 100%;
+    height: auto;        /* アスペクト比維持 */
+    display: block;
+    border: none;
+    object-fit: contain;
+  }
+
+  .message-text {
+    width: 100%;
+    max-width: 700px;    /* 画像幅に揃える */
+    text-align: center;  /* 中央寄せ */
+    margin: 0;           /* 余白リセット */
+    padding: 0;
+    box-sizing: border-box;
+    position: static !important; /* 位置指定解除 */
+    z-index: auto !important;    /* 重なり解除 */
+  }
 }
 
+
+
+
+
 /*-------------------------------------------
-  Responsive - History
+  Responsive-History
 -------------------------------------------*/
-@media (max-width: 1024px) {
+
+@media screen and (max-width: 1024px) {
   .history-section {
     gap: 30px;
     padding-top: 120px;
@@ -1106,16 +1111,20 @@ button.submit-btn:active {
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .history-section {
-    display: block;
-    gap: 10px;
     padding-top: 60px;
+    gap: 10px;
+    display: block;
   }
 
   .history-event {
     display: block;
     max-width: 90%;
+  }
+
+  .history-event:nth-of-type(odd),
+  .history-event:nth-of-type(even) {
     margin: 16px auto;
   }
 
@@ -1133,30 +1142,31 @@ button.submit-btn:active {
 }
 
 /*-------------------------------------------
-  Responsive - Menu Modal
+  Responsive-Menu-Modal
 -------------------------------------------*/
-@media (max-width: 768px) {
+
+@media screen and (max-width: 768px) {
   .menu-modal-content {
     width: 90%;
   }
 }
 
-@media (max-width: 480px) {
-  .menu-modal-name {
-    font-size: 1rem;
-  }
-}
-
 /*-------------------------------------------
-  Responsive - Company
+  Responsive-Company
 -------------------------------------------*/
-@media (max-width: 1024px) {
+
+@media screen and (max-width: 1024px) {
   .company-container {
     gap: 40px;
   }
+
+  .company-info,
+  .company-access-info {
+    flex: 1;
+  }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .company-container {
     gap: 24px;
   }
@@ -1174,26 +1184,45 @@ button.submit-btn:active {
 }
 
 /*-------------------------------------------
-  Responsive - Contact
+  Responsive Contact
 -------------------------------------------*/
-@media (max-width: 768px) {
-  .contact {
-    padding: 80px 16px 48px;
+
+@media screen and (max-width: 768px) {
+  #contact {
+    padding: 80px 16px 48px 16px;
     margin: 0 auto;
   }
 
-  .contact-form {
+  #contact-form {
     margin-top: 24px;
     padding: 0 16px;
     box-sizing: border-box;
   }
 
-  .form-group,
-  .form-input,
-  .form-textarea,
-  .form-select {
+  .form-group {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .form-input {
     width: 100%;
     max-width: 100%;
+  }
+
+  .form-textarea {
+    width: 100%;
+  }
+
+  #contact-time {
+    width: 100%;
+  }
+
+  .privacy-content {
+    margin-left: 0;
+  }
+
+  .privacy-policy-text {
+    margin-right: 0;
   }
 
   .form-actions {
@@ -1201,7 +1230,12 @@ button.submit-btn:active {
     align-items: center;
   }
 
-  button[type="submit"],
+  button[type="submit"] {
+    margin-right: 0;
+    width: 100%;
+    max-width: 300px;
+  }
+
   button[type="reset"] {
     width: 100%;
     max-width: 300px;
@@ -1214,16 +1248,21 @@ button.submit-btn:active {
 }
 
 /*-------------------------------------------
-  Responsive - Footer
+  Responsive-Footer
 -------------------------------------------*/
-@media (max-width: 768px) {
+
+@media screen and (max-width: 768px) {
   .footer-content {
     flex-direction: column;
     align-items: center;
     padding: 0 16px;
   }
 
-  .footer-information,
+  .footer-information {
+    margin-left: 0;
+    text-align: center;
+  }
+
   .footer-address-number,
   .footer-address-jp,
   .footer-address-en {
@@ -1240,7 +1279,7 @@ button.submit-btn:active {
     font-size: 12px;
   }
 
-  .footer-copyright {
+  .copyright {
     font-size: 0.6875rem;
     margin-top: 16px;
     text-align: center;

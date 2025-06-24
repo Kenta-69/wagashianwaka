@@ -1,68 +1,64 @@
 // ----------------------------------
 // Smooth Scroll
 // ----------------------------------
-
-// メニュー内のリンクをクリックしたらメニューを閉じる
-document.querySelectorAll('.header-menu a').forEach(link => {
-  link.addEventListener('click', function(event) {
-    const targetId = this.getAttribute('href'); // クリックしたリンクのhrefを取得
-    const targetElement = document.querySelector(targetId); // 対象の要素を取得
-
-    if (targetElement) {
-      event.preventDefault(); // 通常のアンカーリンクの動作を無効化
-
-      const headerHeight = document.querySelector('#header').offsetHeight; // ヘッダーの高さを取得
-      const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight; // 正しい位置を計算
-
-      window.scrollTo({ top: targetPosition, behavior: 'smooth' }); // スムーズスクロールで移動
-    }
-
-    // メニューを閉じる
-    document.querySelector('.header-menu').classList.remove('active');
-    document.querySelector('.header-menu-toggle').classList.remove('active');
-  });
-});
-
-// -----------------------------
-// Responsive Hamburger Menu
-// -----------------------------
-
-// ハンバーガーメニューを開閉する処理
-document.querySelector('.header-menu-toggle').addEventListener('click', function() {
-  document.querySelector('.header-menu').classList.toggle('active');
-  this.classList.toggle('active');
-});
-
-// -----------------------------
-// News Modal
-// -----------------------------
-const modal = document.querySelector('.news-modal');
-const closeBtn = document.getElementById('modal-close');
-
-document.querySelectorAll('.news-title a').forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const title = link.dataset.title;
-    const image = link.dataset.image;
-    const content = link.closest('article').querySelector('.news-content').innerHTML;
-
-    modal.querySelector('#modal-title').textContent = title;
-    modal.querySelector('#modal-image').src = image;
-    modal.querySelector('#modal-description').innerHTML = content;
-    modal.classList.add('show');
-  });
-});
-
-closeBtn.addEventListener('click', () => {
-  modal.classList.remove('show');
-});
-
-
-//History-Event-Animation
 document.addEventListener("DOMContentLoaded", function () {
-  const events = document.querySelectorAll(".history-event");
+  document.querySelectorAll(".header-menu a").forEach(link => {
+    link.addEventListener("click", function (event) {
+      const targetId = this.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
 
-  // アニメーション表示処理
+      if (targetElement) {
+        event.preventDefault();
+        const headerHeight = document.querySelector("#header").offsetHeight;
+        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight;
+        window.scrollTo({ top: targetPosition, behavior: "smooth" });
+      }
+
+      document.querySelector(".header-menu").classList.remove("active");
+      document.querySelector(".header-menu-toggle").classList.remove("active");
+    });
+  });
+
+  // -----------------------------
+  // Responsive Hamburger Menu
+  // -----------------------------
+  const toggle = document.querySelector(".header-menu-toggle");
+  const menu = document.querySelector(".header-menu");
+  if (toggle && menu) {
+    toggle.addEventListener("click", function () {
+      menu.classList.toggle("active");
+      this.classList.toggle("active");
+    });
+  }
+
+  // -----------------------------
+  // News Modal
+  // -----------------------------
+  const modal = document.querySelector(".news-modal");
+  const closeBtn = document.getElementById("modal-close");
+  if (modal && closeBtn) {
+    document.querySelectorAll(".news-title a").forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const title = link.dataset.title;
+        const image = link.dataset.image;
+        const content = link.closest("article").querySelector(".news-content").innerHTML;
+
+        modal.querySelector("#modal-title").textContent = title;
+        modal.querySelector("#modal-image").src = image;
+        modal.querySelector("#modal-description").innerHTML = content;
+        modal.classList.add("show");
+      });
+    });
+    closeBtn.addEventListener("click", () => {
+      modal.classList.remove("show");
+    });
+  }
+
+  // -----------------------------
+  // History-Event-Animation
+  // -----------------------------
+  const events = document.querySelectorAll(".history-event");
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -73,29 +69,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
   events.forEach(event => observer.observe(event));
 
-  // 金の棒の高さを最後のイベントに合わせて調整
   const historySection = document.querySelector(".history-section");
   const lastEvent = events[events.length - 5];
-
   if (historySection && lastEvent) {
     const sectionTop = historySection.getBoundingClientRect().top + window.scrollY;
     const eventBottom = lastEvent.getBoundingClientRect().bottom + window.scrollY;
     const height = eventBottom - sectionTop;
-
-    // CSS変数で高さをセット
     historySection.style.setProperty("--history-line-height", `${height}px`);
   }
-});
 
-
-// Menu-Modal
-document.addEventListener("DOMContentLoaded", function () {
-  // 画像のフェードイン処理
+  // -----------------------------
+  // Menu Modal
+  // -----------------------------
   document.querySelectorAll("img.fadein").forEach(img => {
     img.addEventListener("load", () => img.classList.add("loaded"));
     if (img.complete) img.classList.add("loaded");
   });
-  // モーダル要素を作成
+
   const menuModal = document.createElement("div");
   menuModal.classList.add("menu-modal");
   menuModal.innerHTML = `
@@ -109,71 +99,54 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   `;
   document.body.appendChild(menuModal);
+
   const menuModalImg = menuModal.querySelector("img");
   const menuModalName = menuModal.querySelector(".menu-modal-name");
   const menuModalPrice = menuModal.querySelector(".menu-modal-price");
   const menuModalDescription = menuModal.querySelector(".menu-modal-description");
   const storeButton = menuModal.querySelector(".store-button");
   const closeMenuModal = menuModal.querySelector(".modal-close");
-  // 価格を3桁区切りでカンマを付ける関数
+
   function formatPrice(price) {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
-  // 商品情報を管理する配列
+
   const menuItems = [...document.querySelectorAll(".item")].map(item => ({
     img: item.dataset.img,
     name: item.dataset.name,
-    price: formatPrice(item.dataset.price), // 価格をカンマ付きに変換
+    price: formatPrice(item.dataset.price),
     description: item.querySelector(".item-description").innerHTML,
     url: item.dataset.url
   }));
-  // 商品クリック時の処理
-  document.addEventListener("click", (e) => {
-    const item = e.target.closest(".item");
-    if (!item) return;
-    const index = [...document.querySelectorAll(".item")].indexOf(item);
-    if (index === -1) return;
-    const { img, name, price, description, url } = menuItems[index];
-    // 更新する情報を個別に変更
-    menuModalImg.src = img;
-    menuModalName.textContent = name;
-    menuModalPrice.textContent = `価格: ¥${price}`;
-    menuModalDescription.innerHTML = description;
-    storeButton.href = url;
-    menuModal.classList.add("show"); // 'show'クラスを追加してモーダルを表示
-  });
-  // モーダルを閉じる処理
-  document.addEventListener("click", (e) => {
-    if (e.target === menuModal || e.target.classList.contains("modal-close")) {
-      menuModal.classList.remove("show"); // 'show'クラスを削除してモーダルを非表示
-    }
-  });
-  // 外部リンクをクリックしたらモーダルを閉じる
-  document.addEventListener("click", (e) => {
-    if (e.target.classList.contains("store-button")) {
-      menuModal.classList.remove("show"); // 'show'クラスを削除してモーダルを非表示
-    }
-  });
-});
 
-// Contact-Form
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("contact-form");
-  const toastMessage = document.getElementById("toast-message");
-
-  // モーダルのイベント処理（←ネスト不要）
-  document.querySelectorAll(".item").forEach(item => {
+  document.querySelectorAll(".item").forEach((item, index) => {
     item.addEventListener("click", () => {
-      document.querySelector(".store-button").href = item.dataset.storeUrl;
-      document.querySelector(".menu-modal").style.display = "flex";
+      const { img, name, price, description, url } = menuItems[index];
+      menuModalImg.src = img;
+      menuModalName.textContent = name;
+      menuModalPrice.textContent = `価格: ¥${price}`;
+      menuModalDescription.innerHTML = description;
+      storeButton.href = url;
+      menuModal.classList.add("show");
     });
   });
 
-  document.querySelector(".modal-close").addEventListener("click", () => {
-    document.querySelector(".menu-modal").style.display = "none";
+  menuModal.addEventListener("click", e => {
+    if (e.target === menuModal || e.target.classList.contains("modal-close")) {
+      menuModal.classList.remove("show");
+    }
   });
 
-  // バリデーション関数
+  storeButton.addEventListener("click", () => {
+    menuModal.classList.remove("show");
+  });
+
+  // -----------------------------
+  // Contact Form
+  // -----------------------------
+  const form = document.getElementById("contact-form");
+  const toastMessage = document.getElementById("toast-message");
+
   function validateForm() {
     let errors = [];
     const name = document.getElementById("contact-name").value.trim();
@@ -212,15 +185,16 @@ document.addEventListener("DOMContentLoaded", function () {
     return true;
   }
 
-  // フォーム送信時の処理
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-    if (validateForm()) {
-      toastMessage.classList.add("show");
-      setTimeout(() => {
-        toastMessage.classList.remove("show");
-        form.reset();
-      }, 3000);
-    }
-  });
+  if (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      if (validateForm()) {
+        toastMessage.classList.add("show");
+        setTimeout(() => {
+          toastMessage.classList.remove("show");
+          form.reset();
+        }, 3000);
+      }
+    });
+  }
 });
