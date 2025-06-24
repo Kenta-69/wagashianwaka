@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="このサイトはポートフォリオ掲載用に制作したサンプルサイトです。実在する店舗ではありません。">
+  <meta name="author" content="Enivrant Design">
+  <meta name="robots" content="noindex, follow">
+  <meta property="og:title" content="和菓子庵 和香 WAGASHIAN-WAKA | サンプルサイト">
+  <meta property="og:description" content="このサイトは、ポートフォリオ用に作成された架空のサンプルサイトです。">
+  <meta property="og:image" content="https://your-github-username.github.io/your-repo/img/main-visual-pc.jpg">
+  <meta property="og:url" content="https://your-github-username.github.io/your-repo/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <title>和菓子庵 和香 | サンプルサイト</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header id="header" class="site-header">
+    <h1 class="site-title">
+      <a href="index.html" aria-label="和菓子庵 和香 トップページ">
+        <span class="site-title-sub">和菓子庵</span>
+        <span class="site-title-main">和香</span>
+        <span class="site-title-en">WAGASHIAN</span>
+        <span class="site-title-en">WAKA</span>
+      </a>
+    </h1>
+    <button class="header-menu-toggle" aria-label="メニューを開く" aria-controls="header-menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav aria-label="グローバルナビゲーション">
+      <ul id="header-menu" class="header-menu">
+        <li><a class="header-menu-item" href="#news">お知らせ</a></li>
+        <li><a class="header-menu-item" href="#message">ご挨拶</a></li>
+        <li><a class="header-menu-item" href="#history">和香の歴史</a></li>
+        <li><a class="header-menu-item" href="#menu">お品書き</a></li>
+        <li>
+          <a class="header-menu-item" href="https://example.com/store" target="_blank" rel="noopener noreferrer" title="外部リンク：オンラインストアの例">
+            オンラインストア
+          </a>
+        </li>
+        <li>
+          <a class="header-menu-item" href="https://example.com/instagram" target="_blank" rel="noopener noreferrer" title="外部リンク：Instagramの例">
+            インスタグラム
+          </a>
+        </li>
+        <li><a class="header-menu-item" href="#company">店舗情報</a></li>
+        <li><a class="header-menu-item" href="#contact">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="hero-section">
+      <picture>
+        <source media="(min-width: 768px)" srcset="img/waka-hero-section-pc.webp" width="1440" height="864">
+        <img src="img/waka-hero-section-sp.webp" alt="和菓子庵 和香 ヘッダー画像" width="375" height="225">
+      </picture>
+    </div>
+
+    <section id="news" class="news">
+      <h2 class="section-title" aria-label="お知らせ一覧">
+        <span class="ja">お知らせ</span>
+        <span class="en">NEWS</span>
+      </h2>
+      <div class="news-container">
+
+        <article class="news-article">
+          <div class="date-area">
+            <time datetime="2024-04-10">2024.04.10</time>
+            <span class="category news">メディア情報</span>
+          </div>
+          <h3 class="news-title">
+            <a href="#" data-title="食しんぼ 第5号に掲載" data-image="img/waka-news-magazine-202404.webp" aria-label="雑誌掲載のお知らせ">
+              雑誌掲載のお知らせ<br>
+              <img src="img/waka-news-magazine-202404.webp" alt="食しんぼ掲載画像" width="400" height="566" loading="lazy" style="display: none;">
+            </a>
+          </h3>
+          <p class="news-content" style="display: none;">
+            2024年4月12日発売、"食しんぼ第5号"に掲載されました。<br>
+            全国の書店、オンラインストアにてお求めいただけます。<br>
+          </p>
+        </article>
+        <article class="news-article">
+          <div class="date-area">
+            <time datetime="2024-12-20">2024.12.20</time>
+            <span class="category important">重要なお知らせ</span>
+          </div>
+          <h3 class="news-title">
+            <a href="#" data-title="年末年始営業時間のお知らせ" data-image="img/waka-new-year-hours.webp" aria-label="年末年始営業時間のお知らせ">
+              年末年始営業時間のお知らせ<br>
+              <img src="img/waka-new-year-hours.webp" alt="年末年始画像" width="600" height="600" loading="lazy" style="display: none;">
+            </a>
+          </h3>
+          <p class="news-content" style="display: none;">
+            上記期間を休業といたします。<br>
+            店舗休業中、オンラインストアでのご注文は承っております。<br>
+          </p>
+        </article>
+        <article class="news-article">
+          <div class="date-area">
+            <time datetime="2025-01-06">2025.01.06</time>
+            <span class="category event">商品情報</span>
+          </div>
+          <h3 class="news-title">
+            <a href="#" data-title="期間限定商品のご案内" data-image="img/waka-ichigodaifuku.webp" aria-label="期間限定商品のご案内">
+              期間限定商品のご案内<br>
+              <img src="img/waka-ichigodaifuku.webp" alt="いちご大福画像" width="700" height="525" loading="lazy" style="display: none;">
+            </a>
+          </h3>
+          <p class="news-content" style="display: none;">
+            あまおうと丹波大納言を使用した餡を、求肥で包み込んだ贅沢な逸品です。<br>
+            ほのかな酸味でさっぱりとした味わいをお楽しみいただけます。<br>
+            和茶はもちろん、紅茶やコーヒーとも相性が良い一品です。<br>
+            こちらの商品は一月初旬から三月下旬までの販売となります。<br>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <div id="news-modal" class="news-modal" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description">
+      <div class="news-modal-content">
+        <span id="modal-close" class="modal-close" aria-label="閉じる">&times;</span>
+        <div class="news-modal-image">
+          <img src="" alt="記事画像" id="modal-image" width="600" height="300" loading="lazy" decoding="async">
+        </div>
+
+        <section class="news-modal-body">
+          <h2 id="modal-title" class="news-modal-title">記事タイトル</h2>
+          <p id="modal-description" class="news-modal-text"></p>
+        </section>
+      </div>
+    </div>
+
+    <section id="message">
+      <div class="message-container">
+        <div class="message-img">
+          <img src="img/waka-kazuyoshi-kuroda.webp" alt="和菓子庵 和香 十八代目 当主 黒田 和吉" title="和菓子庵 和香 十八代目 当主 黒田 和吉" width="550" height="290">
+        </div>
+        <div class="message-text">
+          <h2 class="section-title" aria-label="ご挨拶">
+            <span class="ja">ご挨拶</span>
+            <span class="en">Message</span>
+          </h2>
+          <p>和菓子庵・和香は、創業者・黒田宗吉が「和香」に込めた想いを受け継ぎ、和の香りのような優しさと心に響く美味しさをお届けしています。</p>
+          <p>伝統を守りながらも時代に寄り添い、皆さまに愛される和菓子作りを続けてまいります。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="history" class="history-section">
+      <h2 class="section-title" aria-label="和香の歴史">
+        <span class="ja">和香の歴史</span>
+        <span class="en">History</span>
+      </h2>
+      <div class="history-event">
+        <h3 class="history-date">元和六年(1620)</h3>
+        <div class="history-text">
+          <p>黒田宗吉が、東京・日本橋にて創業</p>
+        </div>
+      </div>
+      <div class="history-event">
+        <h3 class="history-date">寛文元年(1661)</h3>
+        <div class="history-text">
+          <p>徳川家御用菓子司を務める</p>
+        </div>
+      </div>
+      <div class="history-event">
+        <h3 class="history-date">延宝八年(1680)</h3>
+        <div class="history-text">
+          <p>黒田源が五代目当主に就任し、毒島家が経営権を掌握</p>
+        </div>
+      </div>
+      <div class="history-event">
+        <h3 class="history-date">天和二年(1682)</h3>
+        <div class="history-text">
+          <p>黒田源が退任、黒田家に経営権が戻る</p>
+        </div>
+      </div>
+      <div class="history-event">
+        <h3 class="history-date">明治二年(1869)</h3>
+        <div class="history-text">
+          <p>黒田邸を建設</p>
+        </div>
+      </div>
+      <div class="history-event">
+        <h3 class="history-date">大正十二年(1923)</h3>
+        <div class="history-text">
+          <p>関東大震災で黒田邸・店舗が全壊</p>
+        </div>
+      </div>
+      <div class="history-event">
+        <h3 class="history-date">大正十三年(1924)</h3>
+        <div class="history-text">
+          <p>東京・銀座へ移転</p>
+        </div>
+      </div>
+      <div class="history-event">
+        <h3 class="history-date">昭和十年(1939)</h3>
+        <div class="history-text">
+          <p>第二次世界大戦勃発により営業停止</p>
+        </div>
+      </div>
+      <div class="history-event">
+        <h3 class="history-date">昭和十七年(1942)</h3>
+        <div class="history-text">
+          <p>十四代目当主・黒田和彦、戦死</p>
+        </div>
+      </div>
+      <div class="history-event">
+        <h3 class="history-date">昭和二十年(1945)</h3>
+        <div class="history-text">
+          <p>東京大空襲により店舗全壊</p>
+        </div>
+      </div>
+      <div class="history-event">
+        <h3 class="history-date">昭和二十一年(1946)</h3>
+        <div class="history-text">
+          <p>和彦の妻、黒田千代子が十五代目当主に就任、営業を再開</p>
+        </div>
+      </div>
+      <div class="history-event">
+        <h3 class="history-date">昭和六二年(1987)</h3>
+        <div class="history-text">
+          <p>通信販売を開始</p>
+        </div>
+      </div>
+      <div class="history-event">
+        <h3 class="history-date">平成元年(1989)</h3>
+        <div class="history-text">
+          <p>初代店舗を復元した現店舗が完成</p>
+        </div>
+      </div>
+      <div class="history-event">
+        <h3 class="history-date">平成十三年(2001)</h3>
+        <div class="history-text">
+          <p>明治時代の本社および黒田亭を再現した現本社が完成</p>
+        </div>
+      </div>
+      <div class="history-event">
+        <h3 class="history-date">平成十四年(2002)</h3>
+        <div class="history-text">
+          <p>オンライン販売を開始</p>
+        </div>
+      </div>
+      <div class="history-event">
+        <h3 class="history-date">平成二十八年</h3>
+        <div class="history-text">
+          <p>十五代目当主・黒田千代子、逝去</p>
+        </div>
+      </div>
+      <div class="history-event">
+        <h3 class="history-date">令和二年(2020)</h3>
+        <div class="history-text">
+          <p>黒田和吉が十八代目当主に就任</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+      <h2 class="section-title">
+        <span class="ja">お品書き</span>
+        <span class="en">Menu</span>
+      </h2>
+      <div class="grid">
+        <div class="item" data-name="永平最中" data-img="img/waka-eiheimonaka.webp" data-price="200" data-url="https://example.com">
+          <div class="item-content">
+            <p class="item-text">
+              永平最中
+              <span class="item-badge">天皇陛下献上品</span>
+            </p>
+            <img class="fadein" src="img/waka-eiheimonaka.webp" width="700" height="467" alt="永平最中" title="永平最中（天皇陛下献上品）">
+            <p class="item-price">¥200</p>
+            <p class="item-description">
+              和香創業以来の看板商品です。<br>
+              丹波大納言小豆に讃岐和三盆と天草灘の塩を加えて仕上げた漉餡を、近江産糯米の最中生地で挟みました。<br>
+              上品な甘さとなめらかな口どけをぜひご賞味ください。<br>
+            </p>
+          </div>
+        </div>
+        <div class="item" data-name="大福" data-img="img/waka-daifuku.webp" data-price="300" data-url="https://example.com">
+          <div class="item-content">
+            <p class="item-text">大福</p>
+            <img class="fadein" src="img/waka-daifuku.webp" width="700" height="467" alt="大福" title="大福">
+            <p class="item-price">¥300</p>
+            <p class="item-description">
+              丹波大納言小豆100%の漉餡に、天草灘の塩豆と讃岐和三盆を加え、上品で奥深い甘さに仕上げました。<br>
+              徳川吉宗公に愛された、和香自慢の大福をぜひご賞味ください。<br>
+            </p>
+          </div>
+        </div>
+        <div class="item" data-name="栗蒸し羊羹" data-img="img/waka-kurimushiyoukan.webp" data-price="5000" data-url="https://example.com">
+          <div class="item-content">
+            <p class="item-text">栗蒸し羊羹</p>
+            <img class="fadein" src="img/waka-kurimushiyoukan.webp" width="700" height="393" alt="栗蒸し羊羹" title="栗蒸し羊羹">
+            <p class="item-price">¥5,000</p>
+            <p class="item-description">
+              茨城県笠間産の栗、丹波大納言小豆、讃岐和三盆、そして吉野本葛粉のみを使用し、素材の旨味を最大限に引き出しました。<br>
+              厳選された素材と伝統の技で丁寧に作り上げた味を、ぜひご堪能ください。<br>
+            </p>
+          </div>
+        </div>
+        <div class="item" data-name="葛饅頭" data-img="img/waka-kuzumanju.webp" data-price="300" data-url="https://example.com">
+          <div class="item-content">
+            <p class="item-text">葛饅頭</p>
+            <img class="fadein" src="img/waka-kuzumanju.webp" width="700" height="467" alt="葛饅頭" title="葛饅頭">
+            <p class="item-price">¥300</p>
+            <p class="item-description">
+              吉野本葛粉、阿波和三盆、丹波大納言小豆を使用した蒸し饅頭です。<br>
+              一般的な葛饅頭とは異なり、しっとりとした食感と豊かな風味をお楽しみいただけます。<br>
+              他に無い、和香ならではの逸品を、ぜひご賞味ください。<br>
+            </p>
+          </div>
+        </div>
+        <div class="item" data-name="銅鑼焼き" data-img="img/waka-dorayaki.webp" data-price="300" data-url="https://example.com">
+          <div class="item-content">
+            <p class="item-text">銅鑼焼き</p>
+            <img class="fadein" src="img/waka-dorayaki.webp" width="700" height="467" alt="銅鑼焼き" title="銅鑼焼き">
+            <p class="item-price">¥300</p>
+            <p class="item-description">
+              丹波大納言小豆の作られた上品な甘味の粒餡を、吉野本葛粉と近江産糯米粉を絶妙に組み合わせた生地で包みあげています。<br>
+              生地に信州産アカシア蜂蜜を加えることで、風味と旨味をより引き立てています。<br>
+              大正浪漫の時代より愛される東京銘菓を、ぜひご賞味ください。<br>
+            </p>
+          </div>
+        </div>
+        <div class="item" data-name="わらび餅" data-img="img/waka-warabimochi.webp" data-price="5000" data-url="https://example.com">
+          <div class="item-content">
+            <p class="item-text">
+              わらび餅
+              <span class="item-badge">天皇陛下献上品</span>
+            </p>
+            <img class="fadein" src="img/waka-warabimochi.webp" width="700" height="467" alt="わらび餅" title="わらび餅（天皇陛下献上品）">
+            <p class="item-price">¥5,000</p>
+            <p class="item-description">
+              熊本県産本わらび粉と阿波和三盆を使用した、極上のわらび餅です。<br>
+              丹波黒豆を使用した豊かな風味のきな粉と、波照間島の黒糖で作られた深みのある黒蜜をたっぷりとかけてお楽しみください。<br>
+              こちらの商品は木箱入りのみでの販売となっております。<br>
+            </p>
+          </div>
+        </div>
+        <div class="item" data-name="いちご大福" data-img="img/waka-ichigodaifuku.webp" data-price="400" data-url="https://example.com">
+          <div class="item-content">
+            <p class="item-text">いちご大福</p>
+            <img class="fadein" src="img/waka-ichigodaifuku.webp" width="700" height="525" alt="いちご大福" title="いちご大福">
+            <p class="item-price">¥400</p>
+            <p class="item-description">
+              あまおうと丹波大納言を使用した餡を、求肥で包み込んだ贅沢な逸品です。<br>
+              ほのかな酸味でさっぱりとした味わいをお楽しみいただけます。<br>
+              和茶はもちろん、紅茶やコーヒーとも相性が良い一品です。<br>
+              こちらの商品は一月初旬から三月下旬までの販売となります。<br>
+            </p>
+          </div>
+        </div>
+        <div class="item" data-name="桜餅" data-img="img/waka-sakuramochi.webp" data-price="400" data-url="https://example.com">
+          <div class="item-content">
+            <p class="item-text">桜餅</p>
+            <img class="fadein" src="img/waka-sakuramochi.webp" width="700" height="467" alt="桜餅" title="桜餅">
+            <p class="item-price">¥400</p>
+            <p class="item-description">
+              讃岐和三盆と丹波大納言小豆で作られた漉餡を、宝笠間道明寺粉の生地で包み込んだ桜餅です。<br>
+              ふんわりとした食感と桜の風味をお楽しみいただけます。<br>
+              春の訪れを味と香りで感じていただきたい。<br>
+              十二代目当主・黒田宗太郎の想いを引き継いだ季節の逸品を、どうぞご堪能ください。<br>
+              こちらの商品は三月下旬から四月下旬までの販売となります。<br>
+            </p>
+          </div>
+        </div>
+        <div class="item" data-name="おはぎ" data-img="img/waka-ohagi.webp" data-price="500" data-url="https://example.com">
+          <div class="item-content">
+            <p class="item-text">おはぎ</p>
+            <img class="fadein" src="img/waka-ohagi.webp" width="700" height="467" alt="おはぎ" title="おはぎ">
+            <p class="item-price">¥500</p>
+            <p class="item-description">
+              和三盆の上品な甘さと、丹波大納言小豆の豊かな風味を生かした粒餡を、なめらかな羽二重餅で包みました。<br>
+              口どけの良さと奥深い味わいが調和した、格別の一品をどうぞご賞味ください。<br>
+              こちらの商品は三月下旬と、九月中旬から十月中旬までの販売となります。<br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="company" class="company-section">
+      <h2 class="section-title">
+        <span class="ja">店舗情報</span>
+        <span class="en">COMPANY</span>
+      </h2>
+      <div class="company-image">
+        <img src="img/waka-company.webp" width="1024" height="1024" alt="会社の外観の写真" loading="lazy">
+      </div>
+      <div class="company-container">
+        <div class="company-info">
+          <dl class="company-details">
+            <dt>屋号</dt>
+            <dd>和菓子庵 和香</dd>
+            <dt>所在地</dt>
+            <dd>東京都中央区銀座718-9</dd>
+            <dt>電話番号</dt>
+            <dd>+81-3-9786-5432</dd>
+            <dt>営業時間</dt>
+            <dd>午前10時より午後6時まで</dd>
+            <dt>定休日</dt>
+            <dd>水曜日</dd>
+            <dt>当主</dt>
+            <dd>黒田 和吉</dd>
+            <dt>事業内容</dt>
+            <dd>和菓子の製造・販売</dd>
+            <dt>創業</dt>
+            <dd>1660年4月1日</dd>
+            <dt>資本金</dt>
+            <dd>2,400,000,000円</dd>
+          </dl>
+        </div>
+        <div class="company-access-info">
+          <p class="train-access">銀座線・丸の内線をご利用の方</p>
+          <p class="train-details">銀座駅A2出口またはA3出口から徒歩約5分</p>
+          <p class="train-access">山手線・東海道線をご利用の方</p>
+          <p class="train-details">新橋駅銀座口から徒歩約10分</p>
+          <div class="company-location-map">
+            <iframe src="https://www.google.com/maps/embed?pb=..." width="600" height="450" allowfullscreen loading="lazy" title="会社所在地のGoogleマップ"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <h2 class="section-title">
+        <span class="ja">お問い合わせ</span>
+        <span class="en">Contact</span>
+      </h2>
+      <form id="contact-form" class="contact-form" novalidate onsubmit="return validateForm()">
+        <div class="form-group">
+          <label for="contact-name" class="form-label">お名前 <span class="required">必須</span></label>
+          <input type="text" id="contact-name" name="name" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <label for="contact-email" class="form-label">メールアドレス <span class="required">必須</span></label>
+          <input type="email" id="contact-email" name="email" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <label for="contact-phone" class="form-label">電話番号 <span class="required">必須</span></label>
+          <input type="tel" id="contact-phone" name="phone" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <label for="contact-message" class="form-label">お問い合わせ内容 <span class="required">必須</span></label>
+          <textarea id="contact-message" name="message" class="form-textarea" required></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">返信方法 <span class="required">必須</span></label>
+          <div class="form-radio">
+            <input type="radio" id="response-email" name="response" value="email" required>
+            <label for="response-email">メール</label>
+            <input type="radio" id="response-phone" name="response" value="phone">
+            <label for="response-phone">電話</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">返信希望日 <span class="required">必須</span></label>
+          <div class="form-radio">
+            <input type="radio" id="response-same-day" name="response-date" value="same-day" required>
+            <label for="response-same-day">当日中</label>
+            <input type="radio" id="response-next-day" name="response-date" value="next-day">
+            <label for="response-next-day">明日</label>
+            <input type="radio" id="response-other" name="response-date" value="other">
+            <label for="response-other">その他</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="contact-time" class="form-label">ご希望の時間帯 <span class="required">必須</span></label>
+          <select id="contact-time" name="preferred-time" class="form-select contact-time" required>
+            <option value="">選択してください</option>
+            <option value="10-11">10:00~11:00</option>
+            <option value="11-12">11:00~12:00</option>
+            <option value="12-13">12:00~13:00</option>
+            <option value="13-14">13:00~14:00</option>
+            <option value="15-16">15:00~16:00</option>
+            <option value="16-17">16:00~17:00</option>
+            <option value="17-18">17:00~18:00</option>
+          </select>
+        </div>
+        <div class="privacy-container">
+          <div class="privacy-content">
+            <label for="contact-privacy" class="form-label">プライバシーポリシー（個人情報保護方針）</label>
+            <div class="privacy-policy-text">
+              <p>和菓子庵 和香（以下、「当社」という。）は...<br>...無断での使用や転用は禁止されています。<br>【１４．リンク】<br>当社Webサイトへのリンクは...<br>ただし、Webサイトの内容等によってはリンクの設置をお断りすることがあります。</p>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>
+              <input type="checkbox" id="contact-privacy" class="form-checkbox" required>
+              プライバシーポリシーに同意します <span class="required">必須</span>
+            </label>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="submit-btn">送信 - Submit -</button>
+        </div>
+      </form>
+      <div id="toast-message" class="toast-message">
+        <p>お問い合わせいただきありがとうございます<br>担当者よりご連絡いたしますので、少々お待ちください</p>
+      </div>
+    </section>
+    
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-information">
+        <p><span class="footer-establishment-jp">元和六年創業</span></p>
+        <p><span class="footer-location-jp">東京都・銀座</span> 和菓子庵 和香</p>
+        <p><span class="footer-establishment-en">Since 1660</span></p>
+        <p><span class="footer-location-en">Ginza, Tokyo</span> WAGASHIAN WAKA</p>
+      </div>
+      <address class="footer-address">
+        <span class="footer-address-number">〒106-0061</span>
+        <span class="footer-address-jp">東京都中央区銀座7-8-9</span>
+        <span class="footer-address-en">7-8-9 Ginza, Chuo-ku, Tokyo, Japan</span>
+        <span class="footer-phone">TEL: +81-3-9786-5432</span>
+      </address>
+    </div>
+    <p class="footer-copyright">&copy; 和菓子庵 和香 / WAGASHIAN WAKA Inc.</p>
+    <p class="footer-disclaimer">このサイトはお客様向けに作成したサンプルであり、記載されている団体・人物は実在しません。</p>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>
